@@ -1,0 +1,18 @@
+<h1> Sign In!!! </h1>
+
+<p style="color: red"><%=notice %></p>
+<%= form_tag sessions_path, :method => :post do %>
+
+	<p>Email: </p>
+	<%= email_field_tag 'email' %>
+
+	<p>Password: </p>
+	<%= password_field_tag 'password' %>
+
+<br/>
+<br/>
+<br/>
+	<%= submit_tag "Sign In", data: { disable_with: "Signing In..." } %>
+
+<% end %>
+

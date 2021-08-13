@@ -1,0 +1,30 @@
+<p id="notice" style="color: red"><%= notice %></p>
+<h1>Listing folders</h1>
+<%= will_paginate @folders %> 
+<div >
+<table>
+  <tr>
+    <th>Folder Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @folders.each do |folder| %>
+  <tr>
+    <td class="show_notes"><%= folder.title %></td>
+    <td><%= link_to 'Show', folder %></td>
+    <td><%= link_to 'Edit', edit_folder_path(folder) %></td>
+    <!-- <td><%= link_to 'Destroy', folder, confirm: 'Are you sure?', method: :delete %></td> -->
+    <td><%= button_to "Delete Folder", {:controller => "folders", :action => 'destroy', :id => folder.id}, :confirm => "Are you sure you want to delete folder #{folder.title}?", :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+<%= will_paginate @folders %> 
+<br />
+
+<%= link_to 'New Folder', new_folder_path %>
+</div>
+

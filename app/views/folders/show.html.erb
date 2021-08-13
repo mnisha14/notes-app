@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1 style="align: center">Title:
+  <%= @folder.title %> </h1>
+</p>
+
+Notes Count: <%= @folder.notes.count %>
+<br/>
+
+
+
+<%# Commented section begins %>
+<% if false %>
+<h2>Notes</h2>
+<% @folder.notes.each do |note| %>
+  <p>
+    <b>Title:</b>
+    <%= note.title %>
+  </p>
+ 
+  <p>
+    <b>Content:</b>
+    <%= note.body %>
+  </p>
+<% end %>
+<% end %>
+
+<%# Commented section ends %>
+
+<h2> Notes </h2>
+<%= render @folder.notes %>
+
+
+
+<h2>Add a Note:</h2>
+<%= render "notes/note_form" %>
+
+
+<br/>
+<br/>
+
+<%= link_to 'Edit', edit_folder_path(@folder) %> |
+<%= link_to 'Back', folders_path %>

@@ -1,0 +1,19 @@
+<p>
+<b>Title:
+<%= note.title %> </b>
+</p>
+
+<p>
+<%= note.body %>
+</p>
+
+
+
+<p>
+  <td><%= link_to 'Edit Note', edit_folder_note_path(note.folder, note) %></td>
+</p>
+<p>
+  <%= link_to 'Destroy Note', [note.folder, note],
+               confirm: 'Are you sure you want to Delete?',
+               method: :delete %>
+</p>
