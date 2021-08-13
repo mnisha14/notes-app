@@ -9,7 +9,7 @@ development:
   pool: 5
   username: root
   password: root
-  timeout: 5000
+  timeout: 6000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
